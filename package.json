@@ -1,0 +1,16 @@
+{
+  "name": "awspolly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1257.0",
+    "firebase": "^9.14.0",
+    "firebase-admin": "^11.3.0"
+  }
+}

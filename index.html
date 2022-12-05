@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <title>My Website</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </link>
+    <link rel="stylesheet" type="text/css" href="./chat.css">
+    </link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.25.0.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">  
+    <style type="text/css">
+        li {
+            list-style: none;
+        }
+    </style>
+
+</head>
+
+<body >
+
+    <!-- Header -->
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero">
+                        <h1><span>A</span>WS <span>P</span>olly</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="#hero" data-after="Home">Home</a></li>
+                        <li><a href="#projects" data-after="Service">Members</a></li>
+                        <li><a href="#services" data-after="Projects">Projects</a></li>
+                        <li><a href="#pub-nub" data-after="PubNub">Chat</a></li>
+                        <li><a href="#about" data-after="About">Code</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hero">
+        <div class="hero container">
+            <div>
+                <h1><span></span></h1>
+                <h1>Nhóm <span></span></h1>
+                <h1>23 <span></span></h1>
+                <a href="https://toanhuynh1.github.io/TestPush/login.html" type="button" class="cta" id="logout-button">Đăng xuất</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects container">
+            <div class="projects-header">
+                <h1 class="section-title">Mem <span>bers</span></h1>
+            </div>
+            <div class="all-projects">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Vũ Trần Thành Công</h1>
+                        <h2>20110448</h2>
+                        <p></p>
+                    </div>
+                    <div class="project-img">
+                        <img src="img/avt3.PNG" alt="img">
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Huỳnh Bảo Toàn</h1>
+                        <h2>20161385</h2>
+                        <p></p>
+                    </div>
+                    <div class="project-img">
+                        <img src="img/avt2.jpg" alt="img">
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Đào Xuân Trí</h1>
+                        <h2>20110581</h2>
+                        <p></p>
+                    </div>
+                    <div class="project-img">
+                        <img src="img/avt1.jpg" alt="img">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="services container">
+            <div class="service-top">
+                <h1 class="section-title">Pro<span>j</span>ects</h1>
+                <p>Sau đây là projects mà nhóm đã thực hiện</p>
+            </div>
+
+            <div class="top">
+                <span id="title">
+          <h1>Convert Text To Speech Via AWS Polly</h1>
+          <div id = "checkbox-ssml">
+            <p style="margin-bottom: -12px">SSML</p>
+            <input class="toggle" type="checkbox" id="toggle" />
+            <label class="toggle" for="toggle"></label>
+           </div>
+
+           <br>
+          
+        </span>
+            </div>
+            <div id="textToSynth">
+                <h3 style="margin-top: 55px;">Choose Language</h3>
+                <select autofocus id="author" onchange="getInfo()">
+          <option value="Matthew">English(US)</option>
+          <option value="Emma">English(UK)</option>
+          <option value="Russell">English (Australian)</option>
+          <option value="Ruben">Dutch (Netherland)</option>
+          <option value="Aria">English (New Zealand)</option>
+          <option value="Ayanda">English (South African)</option>
+          <option value="Naja">Danish (Denmark)</option>
+          <option value="Zhiyu">Chinese</option>
+          <option value="Zeina">Arabic (Arab)</option>
+          <option value="Aditi">Hindi(India)</option>
+          <option value="Mathieu">French</option>
+          <option value="Marlene">German</option>
+          <option value="Karl">Icelandic</option>
+          <option value="Bianca">Italian</option>
+          <option value="Takumi">Japanese</option>
+          <option value="Seoyeon">Korean</option>
+          <option value="Liv">Norwegian(Norway)</option>
+          <option value="Male">Polish(Poland)</option>
+          <option value="Camila">Portuguese (Brazilian)</option>
+          <option value="Cristiano">Portuguese (European)</option>
+          <option value="Carmen">Romanian</option>
+          <option value="Maxim">Russian</option>
+          <option value="Lucia">Spanish (European)</option>
+          <option value="Miguel">Spanish (US)</option>
+          <option value="Astrid">Swedish</option>
+          <option value="Filiz">Turkish</option>
+          <option value="Gwyneth">Welsh(Wales)</option>
+      
+        </select> </br>
+                <input type="file" id="myFile" name="filename" accept=".txt">
+                <br>
+                <img onclick="showText()" class="img-download" src="./img/download-to-storage-drive.png" alt="#">
+                
+                <div id="form-name" style="display: none;">
+                    Nhập tên: <input id ="input-download" type="text">
+                    <button id="btn-cancel-show" onclick="downloadOK()">OK</button>
+                    <button id="btn-cancel-show" onclick="endText()">Cancel</button>
+                </div>
+               
+                <p id="state"></p>
+                <textarea type="text" id="textEntry" placeholder="Enter your text"></textarea> </br>
+                <div class="button">
+                    <button class="btn1" onClick="speakText()">Synthesize</button>
+                    <button class="btn2" onClick="clearText()">Clear Text</button>
+                    <button class="btn3" type="button" id="audio-btn"><span class="bi bi-mic"></span> MircoPhone</button>           
+                      <button class="btn3" onclick="laygiatri()">Auto</button>
+                      <br>
+                    <input type="submit" id = 'auto' class="btn4" ></span></button>
+                </div>
+                <p id="result">None Text</p>
+            </div>
+            <audio id="audioPlayback" controls>
+        <source id="audioSource" type="audio/mp3" src="">
+      </audio>
+            <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+            <script type="text/javascript" src="main.js"></script>
+        </div>
+    </section>
+
+
+    <section id="pub-nub" >
+
+       
+        <h1 class="section-title">Pu<span>b</span>Nub</h1>
+        <p class="pubnub-cotent">Chat app Demo</p>
+        <div class="container clearfix">
+            <div class="people-list" id="people-list">
+                <ul class="list">
+                   
+                    <h1 style="margin-bottom: 12px; margin-top: 1px;">Danh sách thành viên</h1>
+
+                    <i style="margin-bottom: 12px;" class="fa fa-circle online"></i> online
+
+                  
+                    <div id="name-js">
+                   
+                    <script type="module">
+                        
+                        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js"; 
+                        import {get, getDatabase,ref ,set, child, update, remove}   from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js"; 
+                        import {getAuth } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js"; 
+                    
+                   
+                            
+                        const firebaseConfig = {
+                            apiKey: "AIzaSyAumUTEV-8m0ssgIYssxN6gGzgd_VxPB78",
+                            authDomain: "authfirebase-2b26c.firebaseapp.com",
+                            databaseURL: "https://authfirebase-2b26c-default-rtdb.firebaseio.com",
+                            projectId: "authfirebase-2b26c",
+                            storageBucket: "authfirebase-2b26c.appspot.com",
+                            messagingSenderId: "801604261642",
+                            appId: "1:801604261642:web:19c68723b4fcf93e1e0cf3"
+                        };
+                        const app = initializeApp(firebaseConfig); 
+                        
+                                   
+                        const dbRef = ref(getDatabase()); 
+                        
+                        const auth = getAuth();
+                    
+                    
+                        get(child(dbRef, "users/" )).then((snapshot) => {
+                        if (snapshot.exists()) {
+                    
+                            var UserObject = snapshot.val();
+                    
+                            var ArrayId = []
+                    
+                            for (var x in UserObject)
+                            {
+                                let k = ArrayId.push(x)
+                            }
+                
+                    
+                    
+                            const deep_value = (obj, path) => 
+                            path
+                            .replace(/\[|\]\.?/g, '.')
+                            .split('.')
+                            .filter(s => s)
+                            .reduce((acc, val) => acc && acc[val], obj);
+                            
+                            let lamml2 ="";
+                            for (var i = 0 ; i < ArrayId.length; i++)
+                            {
+                            var bien = ArrayId[i] + '.name';
+                            
+                            var kt = deep_value(UserObject, bien);
+                            
+                            var idtest = 'skud'+ (i);
+                            lamml2 += `<h2 style="margin-bottom: 12px;" id=${idtest}>${kt}</h2>`;
+                            
+                            document.getElementById("name-js").innerHTML = lamml2;
+
+                            
+                        }
+                    
+                        } else {
+                            console.log("No data available");
+                         }
+                        }).catch((error) => {
+                            console.error(error);
+                        });
+                      
+                    </script>
+                    </div>
+                </ul>
+            </div>
+            <div class="chat">
+                <div class="chat-header clearfix">
+                    <img src="./img/hacker.png" alt="avatar" class="img-header" />
+                    <div class="chat-about">
+
+                        <div class="chat-with">Chat With Me</div>
+                        <h2 id='name-user'></h2>
+                    </div>
+                    <br>
+                    <img id = "mic-chat" src="./img/microphone.png" alt="#">
+                    
+                    <div id="speechButton" class="speech-button"><img  src="./img/sound.png"></div>
+                </div>
+                <div class="chat-history">
+                    <ul id="chat-history-ul"></ul>
+                </div>
+                <form id="sendMessage" class="chat-message clearfix">
+                    <input style="background-color: rgb(200, 196, 209);"  type="text" name="message-to-send" id="message-to-send" placeholder="Type your message" rows="1" autocomplete="off"></input>
+                    <img  id="img-clear" src="./img/clear.png" alt="#">
+                    <input style="background-color: rgb(127, 143, 165); padding:5px; border-radius: 10%; " class="send-mess" type="submit" value="Send"></input>
+                </form>
+            </div>
+        </div>
+
+        <audio id="player">
+  </audio>
+
+        <script id="message-template" type="text/x-handlebars-template">
+            <li class="clearfix" data-order={{tt}}>
+                <div class="message-data align-right">
+                    <span class="message-data-time">{{time}}</span> &nbsp; &nbsp;
+                    <!-- <span class="message-data-name">{{user}}</span> <i class="fa fa-circle me"></i> -->
+                </div>
+                <div class="message other-message float-right">
+                    {{{messageOutput}}}
+                </div>
+            </li>
+        </script>
+        <script id="message-response-template" type="text/x-handlebars-template">
+            <li data-order={{tt}}>
+                <div class="message-data">
+                    <!-- <span class="message-data-name"><i class="fa fa-circle online"></i> {{user}}</span> -->
+                    <span class="message-data-time">{{time}}</span>
+                </div>
+                <div class="message my-message">
+                    {{{messageOutput}}}
+                </div>
+            </li>
+        </script>
+        <script id="person-template" type="text/x-handlebars-template">
+            {{#if first}}
+            <li class="clearfix" id="{{uuid}}">
+                <!-- <img src="{{avatar}}" alt="avatar" /> -->
+                <div class="about">
+                    <!-- <div style="font-size: 20px;" class="name">{{first}}</div> -->
+                    <div class="status">
+                        <!-- <i class="fa fa-circle online"></i> online -->
+                    </div>
+                </div>
+            </li>
+            {{/if}}
+        </script>
+
+    </section>
+
+
+    <section id="about">
+        <div class="about container">
+            <div class="col-left">
+                <div class="about-img">
+                    <img src="img/anh5.png" alt="img">
+                </div>
+            </div>
+            <div class="col-right">
+                <h1 class="section-title">Source <span>Code</span></h1>
+                <h2>Nhấn vào đây</h2>
+                <a href="https://github.com/ToanHuynh1/AWSPolly_Nhom28" class="cta">Download</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact container">
+            <div>
+                <h1 class="section-title">Contact <span>info</span></h1>
+            </div>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+                    <div class="contact-info">
+                        <h1>Phone</h1>
+                        <h2>0765969802</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+                    <div class="contact-info">
+                        <h1>Email</h1>
+                        <h2>20161385@student.hcmute.edu.vn</h2>
+                        <h2>20110581@student.hcmute.edu.vn</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+                    <div class="contact-info">
+                        <h1>Address</h1>
+                        <h2>ĐH SPKT: Số 1, Võ Văn Ngân</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="footer container">
+            <div class="brand">
+                <h1><span>A</span>WS <span>P</span>olly</h1>
+            </div>
+            <div class="social-icon">
+                <div class="social-item">
+                    <a href="https://www.facebook.com/profile.php?id=100009808472767"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+                </div>
+                <div class="social-item">
+                    <a href="https://www.instagram.com/huynhbao.toan/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./logout.js"></script>
+    <script src="./chat.js"></script>
+    <script type="module" src="./micro.js"></script>
+
+   
+        
+
+        <script>
+            function showText()
+            {
+                document.getElementById("form-name").style.display = "block";
+            }
+
+            function endText()
+            {
+                document.getElementById("form-name").style.display = "none";
+            }
+
+            function downloadOK()
+            {
+                let textDownload = document.getElementById('input-download').value; 
+                let textContent = document.getElementById('textEntry').value; 
+         
+                // var data_string = JSON.stringify(textDownload)
+                var file = new Blob([textContent], {type: "text"})
+                var anchor = document.createElement("a")
+                anchor.href = URL.createObjectURL(file)
+                anchor.download = textDownload
+                anchor.click()
+
+            }
+        </script>
+
+        <script>
+            function laygiatri()
+            {
+            let e = document.getElementById('author');
+            let giaTri = e.options[e.selectedIndex].text;
+            document.getElementById('auto').value = giaTri;
+            }
+        </script>
+
+        <script>
+            document.getElementById('auto').addEventListener('click', function () {
+            let test = document.getElementById('auto').value
+            console.log(test)
+
+            let arrayAutoEnglish = ['Thanks to technology and the accessibility of language-learning tools, there no better time to start learning English. Soon enough, you come to see that English is related to plenty of other languages—including Germanic and Romantic ones—making it easier to grasp. ',
+            'Even though Israel is a small country it is always in the news.  The news continues to report on Jews moving to Israel, on the technology invented there, but also on conflict, wars and tensions with surrounding people.  Why? A look at Israel history in the book of Genesis in the Bible reveals that 4000 years ago a man, who is now very well known, went on a camping trip in that part of the world.  The Bible says that his story affects our future.',
+            'Surprisingly Abraham really did nothing important in his life. He was not a great writer, king, inventor or military leader.He did nothing except camp out where he was told to go and father a few children. His name is great only because the children became nation(s) that kept the record of his life and then individuals and nations that came from him became great. ',
+            'The Jews who descended from Abraham were never really the nation we associate with greatness.They did not conquer and build a great empire like the Romans did or build large monuments like the Egyptians did with the pyramids. ',
+            'There is something else promised as well. The blessing was not only for Abraham. It says that “all peoples on earth will be blessed through you” (through Abraham). We should pay attention because you and I are part of all peoples on earth no matter what our religion, color, background, nationality, social status, or what language we speak.',
+            'Grammarly Premium can also be a valuable tool to help you write in English with fluency—it includes suggestions specifically around grammar rules and idioms that are difficult to grasp. What more, users whose primary language is Spanish, Hindi, Mandarin, French, or German can find suggestions tailored to those languages.'
+            ]
+            
+
+               
+            let arrayAutoChiana = ['臺灣 在繁体中“臺”亦作俗字“台” 臺灣話 Tâi-oân 臺羅Tâi-uân 客家话 Thòi-vàn 西方世界亦稱福爾摩 葡萄牙語 Formosa 是位於東亞、太平洋西北側的島 是東亞島弧中的一島 地處琉球群島與菲律賓群島之間 西隔臺灣海峽與中国大陆相望 海峽距離約130公里 周圍海域從3點鐘方向以順時鐘排序分別為太平洋 菲律賓海）',
+            '台灣島以移民為主的人文結構亦帶來多元的政治觀點自大航海時代以來台灣文化就在明鄭、清朝的統治與西方列強的衝擊中經歷多次大變動近代則因為日本統治而發展出日治台灣文化之後在日本進行戰爭的擴張下推廣為皇民化運動直到二戰結束為止中華民國政府遷台後隨著1987年戒嚴時代結束',
+            '歷經1860年臺灣開港以來至日治時期所打下的現代化基礎 以及中華民國政府遷臺後運用美援所進行的一系列的經濟建加上國際上冷戰對峙的格 臺灣自1960年代起在經濟與社會發展上突飛猛締造「臺灣奇蹟」名列亞洲四小龍之一之後在1990年代躋身已開發國家之列 目前無論人均所得或人類發展指數均具世界先進國家水準。臺灣擁有蓬勃的製造業及尖端科技 在半導體、資訊科技、通訊、電子精密製造等領域執牛耳。貿易方面主要透過高科技產業賺取外匯，經濟發展上以高科技產業與服務業為中心，亦朝向文化產業及觀光業發展',
+            '海SEAhǎi又称为“大海”是指与“大洋”相连接的大面积咸水区域即大洋边缘的附属部分。 通常大型内陆盐湖、没有与海洋连通的大型咸水湖泊如里海、加利利海不是“海”。 海域对人类的作用不仅是提供丰富的各类可用资源，还对人类有益处。',
+            '海是由大量鹹水組成的水體，四周邻接陆地。[1]廣義上的海指由地球海洋鹹水水域組成的部分一般把它看待為一整個世界洋或是由若干大洋組合而成的水体。較小的次要海區如地中海或大型盐湖如里海則一般以「海」命名。这些海与大洋相比没有独立的潮汐以及海流。海可调节地球的氣候在水循環、碳循環、氮循環中均扮演着重要的角色。雖然人類從史前時代就開始在大海中旅行並探索未知的海域不過現代海洋學研究從1870年代英國的挑戰者號遠征才開始',
+            '海洋對人類貿易、旅遊、礦物開採、能源生產等方面均相當重要，亦為戰爭的場域。位於海岸的城市可能受地震或火山活動造成的海嘯影響，熱帶海域為熱帶氣旋、颱風及气旋的活躍區域。海洋對於人類文化產生重要影響'
+            ]
+
+            let arrayAutoNetherland = [
+                'Dank u wel en dankuwel zijn allebei correct in de betekenis ik bedank u',
+                'Er is ook een zelfstandig naamwoord dankuwel',
+                'Dan mag je geen spaties gebruiken. Bijvoorbeeld: Na een hartelijk dankjewel namen we afscheid.',
+                'De daad van het uitspreken van een formele dankbetuiging',
+                'Als tussenwerpsel of naamwoord wordt dit woord aaneengeschreven, maar in een zinsnede kunnen de drie delen ook afzonderlijk geschreven worden'
+            ]
+
+            let arrayAutoDenmark = [
+                'Mine damer og herrer, hr. kommissær, godmorgen.',
+                'Godmorgen, mine damer og herrer.',
+                'Jeg kan virkelig anbefale Europa-Parlamentet at godkende denne brændstofspakke.',
+                'Vi kan selvfølgelig ikke godkende sådan et direktiv.',
+                'Hvad angår indledningen, er jeg helt enig, og jeg kan godkende ændringsforslag 7.'
+            ]
+
+            let arrayAutoArabic = [
+                'دبي- العربية.نت',
+                ' سماك"، أن الشاب البالغ من العمر 27 عامًا قُتل أمس في أنزلي، ',
+                ' أطلقت النار بينما كان سماك من قبل برفقة خطيبته، يطلقان بوق السيارة فرحا بخسارة المنتخب، بحسب ما أفادت شبكة "إيران انترناشيونال".',
+                ' الكردية تهليلاً لخسارة المنتخب، الذي تحولت النظرة إليه من متعاطفة إلى غاضبة، جراء تحول مواقفه أيضاً من الاحتجاجات التي تفجرت ',
+                ' حيث راحوا يتمتمون النشيد، فيما علت صيحات الاستهجان'
+            ]
+
+
+            let arrayAutoIndia = [
+               'हिन्दी जिसके मानकीकृत रूप को मानक हिन्दी कहा जाता है, विश्व की एक प्रमुख भाषा है एवं भारत की एक राजभाषा है। केन्द्रीय स्तर पर भारत में सह-आधिकारिक भाषा अंग्रेजी है। यह हिन्दु',
+               'भारत की जनगणना २०११ में 57.1% भारतीय जनसंख्या हिन्दी जानती है[8] जिसमें से 43.63% भारतीय लोगों ने हिन्दी को अपनी मूल भाषा या मातृभाषा घोषित किया था।[9][10][11] इसके अतिरिक्त भारत, पाकिस्तान और अन्य देशों में 14 करोड़ 10 लाख लोगों द्वारा बोली जाने वाली उर्दू, व्याकरण के आधार पर हिन्दी के समान है, एवं दोनों ही हिन्दुस्तानी भाषा की परस्पर-सुबोध्य रूप ',
+               'हिन्दी और इसकी बोलियाँ सम्पूर्ण भारत के विविध राज्यों में बोली जाती हैं। ',
+               'हिन्दी शब्द का सम्बन्ध संस्कृत शब्द सिन्धु से माना जाता ',
+               'मुख्य लेख: हिन्दी भाषा का इतिहास',
+               'अंग्रेजी काल में भारतेन्दु हरिश्चन्द्र के समय हिन्दी के विकास में एक नयी चेतना आयी। भा'
+            ]
+
+            let arrayAutoFrench = [
+               'et de lalphabet phonétique international) ainsi que des exercices de',
+               'La navigation sur le site est libre. Néanmoins, si vous utilisez ',
+               'dans certains exercices de discrimination de phonèmes, pensez ',
+               'Ce site est optimisé pour fonctionner sur tous les navigateurs. Vous devez cependant avoir la ',
+               'Inscrivez-vous sur la liste de diffusion si vous désirez être tenu au courant'
+            ]
+
+
+            let arrayAutoGerman= [
+                'Daher das "Tschüssi".',
+                'Um Eure Gewinnchancen zu erhöhen, könnt Ihr außerdem auf Tschau Tschüssi, Love German Books, Die Klappentexterin und Janasworld an derselben Verlosung teilnehmen.',
+                'Ich habe ihre Reise verfolgt, als sie die Atmosphäre der Erde verlassen haben und nach Daxam flogen. Tschüssi.',
+                'Egal also, ob du nach einer einzigartigen Geschenkidee suchst oder dir selbst eine Freude bereiten möchtest, bei Tschau Tschüssi findest du ganz sicher etwas Hübsches.',
+                'Tschüssi und habt einen tollen Tag ihr Lieben!'
+            ]
+
+            let arrayAutoIcelandic= [
+              'Efnið í þessum bálki verðu',
+              'Að skoða Reykjavík',
+              'Hús og styttur',
+              'Ákveðinn greinir',
+              'ORÐAFORÐI OG MÁLNOTKUN'
+            ]
+
+            let arrayAutoItalian= [
+              'Noi e terze parti selezionate utilizziamo cookie o tecnologie simili per finalità tecniche e',
+              'Per quanto riguarda la pubblicità, noi e terze parti selezionate, potremmo utilizzare dati di',
+              'potremmo utilizzare dati di geolocalizzazione precisi e lidentificazione attraverso',
+              'per le seguenti finalità pubblicitarie: annunci e contenuti personalizzati, valutazione degli annunci e del contenuto',
+              'accettare tutti i cookie, compresi quelli di profilazione'
+            ]
+            
+            let arrayAutoJapanese= [
+                'すみません。～はどこですか。',
+                'はじめまして。',
+                '天ぷら | 食べます（食べる）',
+                'に行きますか。',
+                'すみません。この／その／あの　～はいくらですか。'
+            ]
+
+            let arrayAutoKorean  = [
+                '한국어(韓國語)는 대한민국과 조선민주주의인민공화국의 공용어이다. 한국말, 조선어(朝鮮語), 조선말로도 불린다',
+                '다. 수도는 캔버라이고, 주요 도시로는 시드니, 멜버른, 브리즈번, 퍼스, 골드코스트, 애들레이드 등이 있다.',
+                '니아가 육지로부터 분리되었고 배스 해협이 형성되었다. 기원전 8,000년에서 6,500년 사이에 북쪽의 저지대도 바다에 잠겼다. 현재 오스트레일리아 대륙은 1년에 6-7센티미티씩 유라시아 쪽으로 이동하고 있다.',
+                '에서도 일어났다. 1989년 뉴 캐슬 지진에서 가장 많은 사망자가 발생한 가운데, 오스트레일리아 본토와 태즈메이니아 지역의 지진 활동은 적은 편이다.',
+                '회에서 통과되어 영국 의회의 오스트레일리아 내 입법권이 정지되었으며, 사법권도 최고재판소가 런던의 추밀원에서 오스트레일리아 고등법원으로 옮겨짐으로써 영국과 남은 법적 종속관계를 단절하여 자주국가가 되었다.'
+            ]
+
+            let arrayAutoNorwegian  = [
+                'Norskkurs høyere mellomnivå',
+                'Du lærer å uttrykke deg tydelig og detaljert om varierte temaer',
+                'Ordforrådet ditt utvides, og grammatikk, setningsoppbygging og rettskriving perfeksjoneres.',
+                'Folkeuniversitetet er offentlig godkjent tilbyder av norskopplæring',
+                'Det betyr at om du tar norskkurs med undervisningsformen virtuelt klasserom, godkjennes kurstimene av UDI ved søknad om varig oppholdstillatelse.',
+            ]
+
+            let arrayAutoPolish  = [
+              'Dziad kalwaryjski  kto to jest? Znaczenie określenia, przykłady użycia',
+              'Onegdaj co to znaczy? Definicja wyrazu i przykłady użycia',
+              'Onegdaj czyli inaczej…? Co znaczy to słowo? Wyjaśnienie. Definicja,',
+              'Wystarczy spróbować wypowiedzieć kilka słów, pomijając samogłoski, żeby szybko docenić ich rolę. Podobnego przedsięwzięcia podjął się Aleksander Wat w legendarnym Dzienniku bez samogłosek',
+              'Zrobił to zresztą w określonym celu, bo rugując samogłoski, pozbawił tekst płynności, a tym samym dał wyraz swojemu cierpieniu. Ta literacka operacja jest bardzo symboliczna.'
+            ]
+      
+
+            
+            let arrayAutoPortuguese = [
+             'Desculpe, eu não ouvi o que você disse',
+             'Tenha um bom dia',
+             'De onde você é?',
+             'Não importa de onde você é, podemos fornecer o modelo de adaptador de laptop adequado.',
+             'Ele perguntou de onde você é.'
+            ]
+
+           
+            let arrayAutoRomanian = [
+             'Mulțumesc locotenent-colonele pentru aceste merite excepționale.',
+             'Mulțumesc pentru plimbare, domnule ofițer.',
+             'Multumesc pentru confecționarea permis de conducere.',
+             'Multumesc bunicule dar Buddies merita și ei credit.',
+             'Mulțumesc pentru conversația bună, Katherine.'
+            ]
+
+
+            let arrayAutoRussian = [
+             'пресс-конференции приняли участие журналисты Первого канала, РБК, Russia Today и др. сроссийской стороны и многие немецкие СМИ, в том числе телеканал "TV Berlin", газета "Frankfurter Allgemeine" и радио "Russkij Berlin".',
+             'Il russo (nome nativo русский язык, russkij jazyk) è una lingua indoeuropea appartenente al ceppo slavo orientale.',
+             'Главная > Учителям/ Родителям > Russkii iazyk i kul',
+             'Эта цифра показывает, что, несмотря на отношение финнов к Russki, которое в те годы было не лучшим, чем по время Войны-продолжения, массовых расстрелов военнопленных не было.',
+             'Издательство Russkii Iazyk. Kursy'
+            ]
+      
+            let arrayAutoSpanish  = [
+             'España es un país de centro-izquierda y poco religioso cuyos ciudadanos',
+             'Los españoles confían en la Sanidad, las FAS, los',
+             'La empresa de Zaragoza que envió armamento a Ucrania recibe',
+             'Un equipo de los TEDAX de la Policía Nacional de la Jefatura Superior de Policía de Zaragoza se ha desplegado en la empresa de armamento Instalaza',
+             'Según ha podido confirmar EL ESPAÑOL con fuentes oficiales de la Policía Nacional, la Jefatura de Policía de Zaragoza ya investiga la aparición de esta carta de parecidas características a interceptada en la mañana de este miércoles.'
+            ]
+
+            let arrayAutoSwedish = [
+                'Ni glömmer att jag är född här.',
+                'Eftersom jag är född i en rik familj eller brāhmaṇa familj, det är en garanti.',
+                'Det är här jag är född, det är här jag lever och det är här som jag alltid ska stå till förfogande med mitt trivsamma hem.',
+                'Tror du jag är född igår?',
+                'Det är bara det att jag är född här.'
+            ]
+
+            let arrayAutoTurkish = [
+              'için kabul edilmiş biçimidir. Ölçünlü dil, standart dil olarak da belirtilir',
+              'Türkiye Türkçesi, tarihî Osmanl İmparatorluğu coğrafyasnda günümüzde konuşulmaya devam eden Türk ağzlar bakmndan baz gruplara ayrlr.',
+              'ilgili özellikle doğu  henüz  için, coğrafi  daha genel bir şekilde belirtilmiştir.',
+              'Türkçesi coğrafyas içindeki en büyük ve nüfusça en yoğun bölge olan Anadolu',
+              'Cumhuriyeti devlet kabul edilmiştir.'
+            ]
+
+           
+            let arrayAutoWelsh = [
+             'bore da',
+             'Hwyl, Owen!',
+             'Nos da, Draig',
+             'Nos da, Draig',
+             'Nos da, Draig'
+            ]
+
+
+            if ( test == 'English(US)' || test == 'English(UK)' ||  test == 'English (Australian)' ||  test == 'English (New Zealand)' || test == 'English (South African)')
+            {
+               
+                myFunctionAuto()
+            }
+
+            else if (test == 'Chinese')
+            {
+                myFunctionAutoChina()
+            }
+
+            else if (test == 'Dutch (Netherland)')
+            {
+                myFunctionAutoNetherland()
+            }
+
+            else if (test == 'Danish (Denmark)')
+            {
+                myFunctionAutoDenmark()
+            }
+            
+
+            else if (test == 'Arabic (Arab)')
+            {
+                myFunctionAutoArabic()
+            }
+
+
+            else if (test == 'Hindi(India)')
+            {
+                myFunctionAutoIndia()
+            }
+
+            else if (test == 'French')
+            {
+                myFunctionAutoFrench()
+            }
+
+            else if (test == 'German')
+            {
+                myFunctionAutoGerman()
+            }
+
+            else if (test == 'Icelandic')
+            {
+                myFunctionAutoIcelandic()
+            }
+            else if (test == 'Italian')
+            {
+                myFunctionAutoItalian()
+            }
+
+            else if (test == 'Japanese')
+            {
+                myFunctionAutoJapanese()
+            }
+
+            else if (test == 'Korean')
+            {
+                myFunctionAutoKorean()
+            }
+
+            else if (test == 'Norwegian(Norway)')
+            {
+                myFunctionAutoNorwegian()
+            }
+
+
+            else if (test == 'Polish(Poland)')
+            {
+                myFunctionAutoPolish()
+            }
+
+            else if (test == 'Portuguese (Brazilian)' || test == 'Portuguese (European)')
+            {
+                myFunctionAutoPortuguese()
+            }
+
+            else if (test == 'Romanian' )
+            {
+                myFunctionAutoRomanian()
+            }
+
+            else if (test == 'Russian' )
+            {
+                myFunctionAutoRussian()
+            }
+
+            else if (test == 'Spanish (European)' ||  test == 'Spanish (US)')
+            {
+                myFunctionAutoSpanish()
+            }
+
+            else if (test == 'Swedish' )
+            {
+                myFunctionAutoSwedish()
+            }
+
+            else if (test == 'Turkish')
+            {
+                myFunctionAutoTurkish()
+            }
+
+            else if (test == 'Welsh(Wales)')
+            {
+                myFunctionAutoWelsh()
+            }
+            function myFunctionAuto() {
+                let arrayValue = [];
+                let giatri = Math.floor(Math.random() * arrayAutoEnglish.length);
+
+                 if (arrayValue.includes(giatri))
+                 {
+                    giatri = Math.floor(Math.random() * arrayAutoEnglish.length);
+                }
+
+                else
+                {
+                arrayValue.push(giatri)
+                let autoEnglish = arrayAutoEnglish[giatri]
+                document.getElementById('textEntry').value = autoEnglish;
+                }
+                
+            }
+
+            function myFunctionAutoNetherland() {
+                let arrayValueNetherland= [];
+                let giatriNetherland = Math.floor(Math.random() * arrayAutoNetherland.length);
+
+                if (arrayValueNetherland.includes(giatriNetherland))
+                {
+                    giatriNetherland = Math.floor(Math.random() * arrayAutoNetherland.length);
+                }
+
+                else
+                {
+
+                arrayValueNetherland.push(giatriNetherland)
+                let autoNetherland = arrayAutoNetherland[giatriNetherland] 
+
+                document.getElementById('textEntry').value = autoNetherland;
+                }
+
+
+            }
+
+            function myFunctionAutoChina() {
+                let arrayValue2 = []
+                let giatriChiana = Math.floor(Math.random() * arrayAutoChiana.length);
+
+                if (arrayValue2.includes(giatriChiana))
+                {
+                    giatriChiana = Math.floor(Math.random() * arrayAutoChiana.length);
+                }
+
+                else
+                {
+
+                arrayValue2.push(giatriChiana)
+                let autoChiana = arrayAutoChiana[giatriChiana] 
+
+                document.getElementById('textEntry').value = autoChiana;
+                }
+            }
+
+            function myFunctionAutoDenmark() {
+                let arrayValueDenmark= [];
+                let giatriDenmark = Math.floor(Math.random() * arrayAutoDenmark.length);
+
+                if (arrayValueDenmark.includes(giatriDenmark))
+                {
+                    giatriDenmark = Math.floor(Math.random() * arrayAutoDenmark.length);
+                }
+
+                else
+                {
+
+                arrayValueDenmark.push(giatriDenmark)
+                let autoDenmark = arrayAutoDenmark[giatriDenmark] 
+
+                document.getElementById('textEntry').value = autoDenmark;
+                }
+            }
+
+
+            function myFunctionAutoArabic() {
+                let arrayValueArabic= [];
+                let giatriArabic = Math.floor(Math.random() * arrayAutoArabic.length);
+
+                if (arrayValueArabic.includes(giatriArabic))
+                {
+                    giatriArabic = Math.floor(Math.random() * arrayAutoArabic.length);
+                }
+
+                else
+                {
+
+                arrayValueArabic.push(giatriArabic)
+                let autoArabic = arrayAutoArabic[giatriArabic] 
+
+                document.getElementById('textEntry').value = autoArabic;
+                }
+            }
+
+            function myFunctionAutoIndia() {
+                let arrayValueIndia= [];
+                let giatriIndia = Math.floor(Math.random() * arrayAutoIndia.length);
+
+                if (arrayValueIndia.includes(giatriIndia))
+                {
+                    giatriIndia = Math.floor(Math.random() * arrayAutoIndia.length);
+                }
+
+                else
+                {
+
+                    arrayValueIndia.push(giatriIndia)
+                let autoIndia = arrayAutoIndia[giatriIndia] 
+
+                document.getElementById('textEntry').value = autoIndia;
+                }
+            }
+
+    
+
+            function myFunctionAutoFrench() {
+                let arrayValueFrench= [];
+                let giatriFrench = Math.floor(Math.random() * arrayAutoFrench.length);
+
+                if (arrayValueFrench.includes(giatriFrench))
+                {
+                    giatriFrench = Math.floor(Math.random() * arrayAutoFrench.length);
+                }
+
+                else
+                {
+
+                    arrayValueFrench.push(giatriFrench)
+                let autoFrench = arrayAutoFrench[giatriFrench] 
+
+                document.getElementById('textEntry').value = autoFrench;
+                }
+            }
+
+            function myFunctionAutoGerman() {
+                let arrayValueGerman= [];
+                let giatriGerman = Math.floor(Math.random() * arrayAutoGerman.length);
+
+                if (arrayValueGerman.includes(giatriGerman))
+                {
+                    giatriGerman = Math.floor(Math.random() * arrayAutoGerman.length);
+                }
+
+                else
+                {
+
+                    arrayValueGerman.push(giatriGerman)
+                let autoGerman = arrayAutoGerman[giatriGerman] 
+
+                document.getElementById('textEntry').value = autoGerman;
+                }
+            }
+
+            function myFunctionAutoIcelandic() {
+                let arrayValueIcelandic= [];
+                let giatriIcelandic = Math.floor(Math.random() * arrayAutoIcelandic.length);
+
+                if (arrayValueIcelandic.includes(giatriIcelandic))
+                {
+                    giatriIcelandic = Math.floor(Math.random() * arrayAutoIcelandic.length);
+                }
+
+                else
+                {
+
+                    arrayValueIcelandic.push(giatriIcelandic)
+                let autoIcelandic = arrayAutoIcelandic[giatriIcelandic] 
+
+                document.getElementById('textEntry').value = autoIcelandic;
+                }
+            }
+
+            function myFunctionAutoItalian() {
+                let arrayValueItalian= [];
+                let giatriItalian = Math.floor(Math.random() * arrayAutoItalian.length);
+
+                if (arrayValueItalian .includes(giatriItalian))
+                {
+                    giatriItalian = Math.floor(Math.random() * arrayAutoItalian.length);
+                }
+
+                else
+                {
+
+                    arrayValueItalian.push(giatriItalian)
+                let autoItalian = arrayAutoItalian[giatriItalian] 
+
+                document.getElementById('textEntry').value = autoItalian;
+                }
+            }
+
+            function myFunctionAutoJapanese() {
+                let arrayValueJapanese= [];
+                let giatriJapanese = Math.floor(Math.random() * arrayAutoJapanese.length);
+
+                if (arrayValueJapanese .includes(giatriJapanese))
+                {
+                    giatriJapanese = Math.floor(Math.random() * arrayAutoJapanese.length);
+                }
+
+                else
+                {
+
+                    arrayValueJapanese.push(giatriJapanese)
+                let autoJapanese = arrayAutoJapanese[giatriJapanese] 
+
+                document.getElementById('textEntry').value = autoJapanese;
+                }
+            }
+
+            function myFunctionAutoKorean() {
+                let arrayValueKorean= [];
+                let giatriKorean = Math.floor(Math.random() * arrayAutoKorean.length);
+
+                if (arrayValueKorean .includes(giatriKorean))
+                {
+                    giatriKorean = Math.floor(Math.random() * arrayAutoKorean.length);
+                }
+
+                else
+                {
+
+                    arrayValueKorean.push(giatriKorean)
+                let autoKorean = arrayAutoKorean[giatriKorean] 
+
+                document.getElementById('textEntry').value = autoKorean;
+                }
+            }
+
+            function myFunctionAutoNorwegian() {
+                let arrayValueNorwegian= [];
+                let giatriNorwegian = Math.floor(Math.random() * arrayAutoNorwegian.length);
+
+                if (arrayValueNorwegian .includes(giatriNorwegian))
+                {
+                    giatriNorwegian = Math.floor(Math.random() * arrayAutoNorwegian.length);
+                }
+
+                else
+                {
+
+                    arrayValueNorwegian.push(giatriNorwegian)
+                let autoNorwegian = arrayAutoNorwegian[giatriNorwegian] 
+
+                document.getElementById('textEntry').value = autoNorwegian;
+                }
+            }
+
+            function myFunctionAutoPolish() {
+                let arrayValuePolish= [];
+                let giatriPolish = Math.floor(Math.random() * arrayAutoPolish.length);
+
+                if (arrayValuePolish .includes(giatriPolish))
+                {
+                    giatriPolish = Math.floor(Math.random() * arrayAutoPolish.length);
+                }
+
+                else
+                {
+
+                    arrayValuePolish.push(giatriPolish)
+                let autoPolish = arrayAutoPolish[giatriPolish] 
+
+                document.getElementById('textEntry').value = autoPolish;
+                }
+            }
+ 
+            function myFunctionAutoPortuguese() {
+                let arrayValuePortuguese= [];
+                let giatriPortuguese = Math.floor(Math.random() * arrayAutoPortuguese.length);
+
+                if (arrayValuePortuguese .includes(giatriPortuguese))
+                {
+                    giatriPortuguese = Math.floor(Math.random() * arrayAutoPortuguese.length);
+                }
+
+                else
+                {
+
+                    arrayValuePortuguese.push(giatriPortuguese)
+                let autoPortuguese = arrayAutoPortuguese[giatriPortuguese] 
+
+                document.getElementById('textEntry').value = autoPortuguese;
+                }
+            }
+
+
+            function myFunctionAutoRomanian() {
+                let arrayValueRomanian= [];
+                let giatriRomanian = Math.floor(Math.random() * arrayAutoRomanian.length);
+
+                if (arrayValueRomanian .includes(giatriRomanian))
+                {
+                    giatriRomanian = Math.floor(Math.random() * arrayAutoRomanian.length);
+                }
+
+                else
+                {
+
+                    arrayValueRomanian.push(giatriRomanian)
+                let autoRomanian = arrayAutoRomanian[giatriRomanian] 
+
+                document.getElementById('textEntry').value = autoRomanian;
+                }
+            }
+
+
+            function myFunctionAutoRussian() {
+                let arrayValueRussian= [];
+                let giatriRussian = Math.floor(Math.random() * arrayAutoRussian.length);
+
+                if (arrayValueRussian .includes(giatriRussian))
+                {
+                    giatriRussian = Math.floor(Math.random() * arrayAutoRussian.length);
+                }
+
+                else
+                {
+
+                    arrayValueRussian.push(giatriRussian)
+                let autoRussian = arrayAutoRussian[giatriRussian] 
+
+                document.getElementById('textEntry').value = autoRussian;
+                }
+            }
+
+            function myFunctionAutoSpanish() {
+                let arrayValueSpanish= [];
+                let giatriSpanish = Math.floor(Math.random() * arrayAutoSpanish.length);
+
+                if (arrayValueSpanish .includes(giatriSpanish))
+                {
+                    giatriSpanish = Math.floor(Math.random() * arrayAutoSpanish.length);
+                }
+
+                else
+                {
+
+                    arrayValueSpanish.push(giatriSpanish)
+                let autoSpanish = arrayAutoSpanish[giatriSpanish] 
+
+                document.getElementById('textEntry').value = autoSpanish;
+                }
+            }
+
+            function myFunctionAutoSwedish() {
+                let arrayValueSwedish= [];
+                let giatriSwedish = Math.floor(Math.random() * arrayAutoSwedish.length);
+
+                if (arrayValueSwedish .includes(giatriSwedish))
+                {
+                    giatriSwedish = Math.floor(Math.random() * arrayAutoSwedish.length);
+                }
+
+                else
+                {
+
+                    arrayValueSwedish.push(giatriSwedish)
+                let autoSwedish= arrayAutoSwedish[giatriSwedish] 
+
+                document.getElementById('textEntry').value = autoSwedish;
+                }
+            }
+
+            function myFunctionAutoTurkish() {
+                let arrayValueTurkish= [];
+                let giatriTurkish = Math.floor(Math.random() * arrayAutoTurkish.length);
+
+                if (arrayValueTurkish .includes(giatriTurkish))
+                {
+                    giatriTurkish = Math.floor(Math.random() * arrayValueTurkish.length);
+                }
+
+                else
+                {
+
+                    arrayValueTurkish.push(giatriTurkish)
+                let autoTurkish= arrayAutoTurkish[giatriTurkish] 
+
+                document.getElementById('textEntry').value = autoTurkish;
+                }
+            }
+            function myFunctionAutoWelsh() {
+                let arrayValueWelsh= [];
+                let giatriWelsh = Math.floor(Math.random() * arrayValueWelsh.length);
+
+                if (arrayValueWelsh .includes(giatriTurkish))
+                {
+                    giatriWelsh = Math.floor(Math.random() * arrayValueWelsh.length);
+                }
+
+                else
+                {
+
+                    arrayValueWelsh.push(giatriWelsh)
+                let autoWelsh= arrayValueWelsh[giatriWelsh] 
+
+                document.getElementById('textEntry').value = autoWelsh;
+                }
+            }
+
+
+            })  
+
+           
+        </script>
+</body>
+
+</html>

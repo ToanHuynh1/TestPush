@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.top {
+    color: rgb(131, 20, 42);
+    text-align: center;
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#title {
+    padding-top: 50px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    top: 20px;
+    color: black;
+}
+
+#textToSynth {
+    font-size: 13px;
+
+}
+
+
+#textToSynth h3 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+select option {
+    font-size: 20px;
+}
+
+#author {
+    margin-bottom: 5px;
+}
+
+#myFile {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#state {
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: darkgreen;
+}
+
+#textEntry {
+    resize: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    width: 800px;
+    height: 380px;
+    padding: 10px;
+}
+
+#audioPlayback {
+    /* position: relative; */
+    top: 5px;
+    left: 530px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.btn1 {
+    background-color: #5640bc;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn2 {
+    background-color: #a02c2d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.btn3
+{
+    background-color: #2a4e85;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.btn4
+{
+    background-color: #405506;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.btn5
+{
+    background-color: #405506;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+#audioPlayback #audioSource {
+    text-align: center;
+}
+
+#img-clear
+{
+    width: 35px;
+    height: 35px;
+    margin-left: 76%;
+    margin-top: 5px;
+}
+
+
+#img-clear:hover
+{
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 3px;
+    background-color: #d8797b;
+    border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%;
+}
+.send-mess
+{
+    margin-top: 10px;
+    
+}
+
+.speech-button
+{
+    width: 40px;
+    height: 40px;
+ 
+}
+
+.img-download
+{
+    margin:0 12px;
+    width: 30px;
+    height: 30px;
+}
+
+#form-name
+{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+#form-name input
+{
+    margin-left: 5px
+}
+
+#btn-cancel-show
+{
+    background-color: #903838;
+    border: none;
+    color: white;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 5px;
+    
+}
+
+#mic-chat
+{
+   width: 30px;
+   height: 30px;
+   margin-top: 11px;
+}
+
+.select-language
+{
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.form-select
+{
+    margin-top: 12px;
+}
